@@ -21,12 +21,12 @@ const store = createStore(rootReducer, composeEnhancers(
     applyMiddleware(thunk)
 ));
 
+// store.dispatch = addPromiseSupportToDispatch(store);
+
 const Captcha = (
     <Provider store={store}>
         <CaptchaComponent />
     </Provider>
-);
+)
 
 export default Captcha;
-
-

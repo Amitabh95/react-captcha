@@ -1,4 +1,4 @@
+import ReactDOM from 'react-dom';
 import Captcha from './lib/Captcha';
 
-export default Captcha;
-export { Captcha };
+ReactDOM.render(Captcha, document.getElementById('root'));
