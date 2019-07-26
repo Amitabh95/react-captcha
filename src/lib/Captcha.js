@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
@@ -21,12 +21,20 @@ const store = createStore(rootReducer, composeEnhancers(
     applyMiddleware(thunk)
 ));
 
-// store.dispatch = addPromiseSupportToDispatch(store);
+class Captcha extends Component {
+    state = {
+        isValid: false
+    }
 
-const Captcha = (
-    <Provider store={store}>
-        <CaptchaComponent />
-    </Provider>
-)
+    render() {
+        return (
+            <Provider store={store}>
+                <CaptchaComponent/>
+            </Provider>
+        )
+    }
+}
+
+
 
 export default Captcha;
